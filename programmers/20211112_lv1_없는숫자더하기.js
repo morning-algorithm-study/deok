@@ -44,5 +44,14 @@ function solution2(numbers) {
   return answer;
 }
 
+// 풀이3: 0~9 총합에서 주어진 배열 합 빼기
+function solution3(numbers) {
+  let answer = -1;
+  answer = 45 - numbers.reduce((acc, cur) => acc + cur);
+  console.log(answer);
+  return answer;
+}
+
 solution(arr);
 solution2(arr);
+solution3(arr);
