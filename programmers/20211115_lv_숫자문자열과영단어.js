@@ -95,11 +95,8 @@ const solution2 = s => {
   };
 
   for (const key of Object.keys(hash)) {
-    console.log(key);
     s = s.replace(new RegExp(key, "gi"), hash[key]);
   }
-
-  console.log(s);
   return +s;
 };
 
