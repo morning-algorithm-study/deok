@@ -18,7 +18,7 @@
 
 // 12를 11로 나눈 나머지가 1이고, 11보다 작은 자연수 중에서 문제의 조건을 만족하는 수가 없으므로, 11을 return 해야 합니다.
 
-// 풀이1
+// 풀이1: 의식의 흐름
 // - n / i 나머지 1인 숫자를 찾아 배열에 처넣고
 // 처넣은 배열을 오름차순으로 정리하고
 // 그 배열의 가장 작은 수를 리턴
@@ -34,3 +34,16 @@ function solution(n) {
   answer = correctArr[0];
   return answer;
 }
+
+// 풀이2: 간소화 버전
+// i가 작은 수부터 도니까 어짜피 가장 처음으로 return되는 i는 가장 작은 수
+function solution2(n) {
+  for (let i = 0; i < n; i++) {
+    if (n % i === 1) {
+      console.log(i);
+      return i;
+    }
+  }
+}
+
+solution2(5);
