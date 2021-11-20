@@ -49,15 +49,14 @@
 
 const nums = [3, 3, 3, 2, 2, 4];
 
+// 풀이1. 뇌가 퇴근하기 직전 풀이
 function solution(nums) {
   // 골라야하는 포크몬수
   const selectPokemonNum = nums.length / 2;
-  console.log(selectPokemonNum);
 
-  // 폰캣몬 중복제거 후 고를 수 있는 포크몬 종류
+  // 포크몬 중복제거 후 고를 수 있는 포크몬 종류수
   const set = new Set(nums);
   const uniquePokemonNum = [...set].length;
-  console.log(uniquePokemonNum);
 
   if (uniquePokemonNum === selectPokemonNum) {
     return uniquePokemonNum;
@@ -68,4 +67,16 @@ function solution(nums) {
   }
 }
 
-solution(nums);
+// 풀이2. 짧고 아름다운 풀이
+function solution2(nums) {
+  //골라야하는 포크몬수
+  const selectPokemonNum = nums.length / 2;
+
+  // 유니크 포크몬 종류
+  const uniquePokemonNum = [...new Set(nums)].length;
+
+  // 종류수 > 선택할 수 있는 수 ? 선택할 수 있는 수 : 종류수
+  return uniquePokemonNum > selectPokemonNum
+    ? selectPokemonNum
+    : uniquePokemonNum;
+}
