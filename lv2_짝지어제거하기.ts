@@ -27,10 +27,26 @@
 
 // ※ 공지 - 2020년 6월 8일 테스트케이스가 추가되었습니다.
 
-function solution(num: number) {
-  let answer = 0;
-  console.log(num);
-  return answer;
+const S = "baabaa";
+
+function solution(S: string) {
+  const tempArr = [];
+  for (let i = 0; i < S.length; i++) {
+    // 배열 길이가 0이거나
+    // tempArr 마지막 인자와 S의 인자가 같지 않다면 푸시
+    if (tempArr.length === 0 || tempArr[tempArr.length - 1] !== S[i]) {
+      tempArr.push(S[i]);
+
+      // tempArr 마지막 인자와 S인자가 같다면 빼기
+    } else if (tempArr[tempArr.length - 1] === S[i]) {
+      tempArr.pop();
+    }
+  }
+  // 결론적으로 같지 않은 것만 넣다가
+  // 중복되지 않은 글자만 남아서 tempArr 길이가 0이 아니거나
+  // 길이가 0인 배열이 남음
+  console.log(tempArr);
+  return tempArr.length === 0 ? 1 : 0;
 }
 
-solution(2);
+solution(S);
