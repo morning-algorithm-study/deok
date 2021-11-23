@@ -29,7 +29,22 @@
 
 const S = "baabaa";
 
-function solution(S: string) {
+// 풀이1, 효율성 테스트 통과 못함
+function solution(S) {
+  const stringArr = S.split("");
+  console.log(stringArr);
+  for (let i = 0; i < stringArr.length; i++) {
+    if (stringArr[i] === stringArr[i + 1]) {
+      stringArr.splice(i, 2);
+      i = -1;
+    }
+  }
+  console.log(stringArr);
+  return stringArr.length === 0 ? 1 : 0;
+}
+
+// 풀이2, 효율성 테스트 통과 못함
+function solution2(S: string) {
   const tempArr = [];
   for (let i = 0; i < S.length; i++) {
     // 배열 길이가 0이거나
