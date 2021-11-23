@@ -1,3 +1,5 @@
+const str = "1 2 3 4";
+
 function solution(str) {
   let arr = str.split(" ");
   let sortedArr = arr.sort((a, b) => a - b);
@@ -6,3 +8,5 @@ function solution(str) {
   let joinText = min.concat(" ", max);
   return joinText;
 }
+
+solution(str);
