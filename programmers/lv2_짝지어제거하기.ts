@@ -43,7 +43,7 @@ function solution(S) {
   return stringArr.length === 0 ? 1 : 0;
 }
 
-// 풀이2, 효율성 테스트 통과 못함
+// 풀이2
 function solution2(S: string) {
   const tempArr = [];
   for (let i = 0; i < S.length; i++) {
